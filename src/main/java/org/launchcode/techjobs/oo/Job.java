@@ -142,7 +142,7 @@ public class Job {
          return newLine +
                  "ID: " + id + newLine +
                  "Name: " + name + newLine +
-                 "Employer: " + "Data not available" + newLine +
+                 "Employer: " + employer + newLine +
                  "Location: " + location + newLine +
                  "Position Type: " + positionType + newLine +
                  "Core Competency: " + coreCompetency + newLine;

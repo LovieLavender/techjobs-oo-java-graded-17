@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert.*;
 
+import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -33,10 +34,10 @@ public class JobTest {
 
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
-        String newLine = System.lineSeparator();
-        String startsAndEndWithlineSeparator = newLine + "" + newLine;
-        String example = newLine + "" + newLine;
-        assertEquals(startsAndEndWithlineSeparator, example);
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String myTestJob = testJob.toString();
+
+        assertTrue(myTestJob.contains(System.getProperty("line.separator")));
     }
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
