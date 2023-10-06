@@ -91,4 +91,61 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        String newLine = System.lineSeparator();
+        if (name.isEmpty()) {
+            System.out.println(newLine +
+                    "ID: " + id + newLine +
+                    "Name: " + "Data not available" + newLine +
+                    "Employer: " + employer + newLine +
+                    "Location: " + location + newLine +
+                    "Position Type: " + positionType + newLine +
+                    "Core Competency: " + coreCompetency + newLine);
+        }
+        if (employer.getValue().isEmpty()) {
+            System.out.println(newLine +
+                    "ID: " + id + newLine +
+                    "Name: " + name + newLine +
+                    "Employer: " + "Data not available" + newLine +
+                    "Location: " + location + newLine +
+                    "Position Type: " + positionType + newLine +
+                    "Core Competency: " + coreCompetency + newLine);
+        }
+        if (location.getValue().isEmpty()) {
+            System.out.println(newLine +
+                    "ID: " + id + newLine +
+                    "Name: " + name + newLine +
+                    "Employer: " + employer + newLine +
+                    "Location: " + "Data not available" + newLine +
+                    "Position Type: " + positionType + newLine +
+                    "Core Competency: " + coreCompetency + newLine);
+        }
+        if (positionType.getValue().isEmpty()) {
+            System.out.println(newLine +
+                    "ID: " + id + newLine +
+                    "Name: " + name + newLine +
+                    "Employer: " + employer + newLine +
+                    "Location: " + location + newLine +
+                    "Position Type: " + "Data not available" + newLine +
+                    "Core Competency: " + coreCompetency + newLine);
+        }
+         if (coreCompetency.getValue().isEmpty()) {
+             System.out.println(newLine + "ID: " + id + newLine +
+                    "Name: " + name + newLine +
+                    "Employer: " + employer + newLine +
+                    "Location: " + location + newLine +
+                    "Position Type: " + positionType + newLine +
+                    "Core Competency: " + "Data not available" + newLine);
+        }
+         return newLine +
+                 "ID: " + id + newLine +
+                 "Name: " + name + newLine +
+                 "Employer: " + "Data not available" + newLine +
+                 "Location: " + location + newLine +
+                 "Position Type: " + positionType + newLine +
+                 "Core Competency: " + coreCompetency + newLine;
+
+    }
 }
