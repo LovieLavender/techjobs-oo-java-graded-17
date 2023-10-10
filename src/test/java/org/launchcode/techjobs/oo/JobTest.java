@@ -55,13 +55,22 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField(){
         Job testForEmptyFields = new Job("", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String jobString = testForEmptyFields.toString();
+        String newLine = System.lineSeparator();
+        String test = newLine +
+                "ID: " + testForEmptyFields.getId() + newLine +
+                "Name: " + "Data not available" + newLine +
+                "Employer: " + "Data not available" + newLine +
+                "Location: " + "Desert" + newLine +
+                "Position Type: " + "Quality control" + newLine +
+                "Core Competency: " + "Persistence" + newLine;
+        assertSame(jobString, test);
 
-
-        assertSame("Data not available", testForEmptyFields.getName());
-        assertSame("Data not available", testForEmptyFields.getEmployer().getValue());
-        assertSame("Desert", testForEmptyFields.getLocation().getValue());
-        assertSame("Quality control", testForEmptyFields.getPositionType().getValue());
-        assertSame("Persistence", testForEmptyFields.getCoreCompetency().getValue());
+//        assertEquals("Data not available", testForEmptyFields.getName());
+//        assertEquals("Data not available", testForEmptyFields.getEmployer().getValue());
+//        assertEquals("Desert", testForEmptyFields.getLocation().getValue());
+//        assertEquals("Quality control", testForEmptyFields.getPositionType().getValue());
+//        assertEquals("Persistence", testForEmptyFields.getCoreCompetency().getValue());
 
 
 
