@@ -55,23 +55,15 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField(){
         Job testForEmptyFields = new Job("", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String results = testForEmptyFields.toString();
-//        String newLine = System.lineSeparator();
 
-//        String actual = newLine +
-//                "ID: " + testForEmptyFields.getId() + newLine +
-//                "Name: " + testForEmptyFields.getName() + newLine +
-//                "Employer: " + testForEmptyFields.getEmployer().getValue() + newLine +
-//                "Location: " + testForEmptyFields.getLocation().getValue()+ newLine +
-//                "Position Type: " + testForEmptyFields.getPositionType().getValue() + newLine +
-//                "Core Competency: " + testForEmptyFields.getCoreCompetency().getValue() + newLine;
-        assertSame("", testForEmptyFields.getName());
-        assertSame("", testForEmptyFields.getEmployer().getValue());
+
+        assertSame("Data not available", testForEmptyFields.getName());
+        assertSame("Data not available", testForEmptyFields.getEmployer().getValue());
         assertSame("Desert", testForEmptyFields.getLocation().getValue());
         assertSame("Quality control", testForEmptyFields.getPositionType().getValue());
         assertSame("Persistence", testForEmptyFields.getCoreCompetency().getValue());
 
-//        assertNotNull(results);
+
 
 
     }

@@ -96,84 +96,56 @@ public class Job {
     @Override
     public String toString() {
         String newLine = System.lineSeparator();
-        String value;
+//        String value;
+//
+//        if (Objects.equals(name, "")) {
+//            value = "Data not available";
+//        }
+//        if (Objects.equals(employer.getValue(), "")) {
+//            value = "Data not available";
+//        }
+//        if (Objects.equals(location.getValue(), "")) {
+//            value = "Data not available";
+//        }
+//        if (Objects.equals(positionType.getValue(), "")) {
+//            value = "Data not available";
+//        }
+//        if (Objects.equals(coreCompetency.getValue(), "")) {
+//            value = "Data not available";
+//        } else value = newLine +
+//                "ID: " + id + newLine +
+//                "Name: " + name + newLine +
+//                "Employer: " + employer + newLine +
+//                "Location: " + location + newLine +
+//                "Position Type: " + positionType + newLine +
+//                "Core Competency: " + coreCompetency + newLine;
+//        return value;
+//    }
+//}
 
-        if (Objects.equals(name, "")) {
-            value = "Data not available";
+
+        if (name.isEmpty()) {
+            name = "Data not available";
         }
-        if (Objects.equals(employer.getValue(), "")) {
-            value = "Data not available";
+        if (employer.getValue().isEmpty() || employer.getValue() == null) {
+            employer.setValue("Data not available");
         }
-        if (Objects.equals(location.getValue(), "")) {
-            value = "Data not available";
+        if (location.getValue().isEmpty() || location.getValue() == null) {
+            location.setValue("Data not available");
         }
-        if (Objects.equals(positionType.getValue(), "")) {
-            value = "Data not available";
+        if (positionType.getValue().isEmpty() || positionType.getValue() == null) {
+            positionType.setValue("Data not available");
         }
-        if (Objects.equals(coreCompetency.getValue(), "")) {
-            value = "Data not available";
-        } else value = newLine +
+        if (coreCompetency.getValue().isEmpty() || coreCompetency.getValue() == null) {
+            coreCompetency.setValue("Data not available");
+        }
+        return newLine +
                 "ID: " + id + newLine +
                 "Name: " + name + newLine +
                 "Employer: " + employer + newLine +
                 "Location: " + location + newLine +
                 "Position Type: " + positionType + newLine +
                 "Core Competency: " + coreCompetency + newLine;
-        return value;
+
     }
-}
-
-
-//      if (name.isEmpty()) {
-//            System.out.println(newLine +
-//                    "ID: " + id + newLine +
-//                    "Name: " + "Data not available" + newLine +
-//                    "Employer: " + employer + newLine +
-//                    "Location: " + location + newLine +
-//                    "Position Type: " + positionType + newLine +
-//                    "Core Competency: " + coreCompetency + newLine);
-//        }
-//        if (employer.getValue().isEmpty()) {
-//            System.out.println(newLine +
-//                    "ID: " + id + newLine +
-//                    "Name: " + name + newLine +
-//                    "Employer: " + "Data not available" + newLine +
-//                    "Location: " + location + newLine +
-//                    "Position Type: " + positionType + newLine +
-//                    "Core Competency: " + coreCompetency + newLine);
-//        }
-//        if (location.getValue().isEmpty()) {
-//            System.out.println(newLine +
-//                    "ID: " + id + newLine +
-//                    "Name: " + name + newLine +
-//                    "Employer: " + employer + newLine +
-//                    "Location: " + "Data not available" + newLine +
-//                    "Position Type: " + positionType + newLine +
-//                    "Core Competency: " + coreCompetency + newLine);
-//        }
-//        if (positionType.getValue().isEmpty()) {
-//            System.out.println(newLine +
-//                    "ID: " + id + newLine +
-//                    "Name: " + name + newLine +
-//                    "Employer: " + employer + newLine +
-//                    "Location: " + location + newLine +
-//                    "Position Type: " + "Data not available" + newLine +
-//                    "Core Competency: " + coreCompetency + newLine);
-//        }
-//         if (coreCompetency.getValue().isEmpty()) {
-//             System.out.println(newLine + "ID: " + id + newLine +
-//                    "Name: " + name + newLine +
-//                    "Employer: " + employer + newLine +
-//                    "Location: " + location + newLine +
-//                    "Position Type: " + positionType + newLine +
-//                    "Core Competency: " + "Data not available" + newLine);
-//        }
-//         return newLine +
-//                 "ID: " + id + newLine +
-//                 "Name: " + name + newLine +
-//                 "Employer: " + employer + newLine +
-//                 "Location: " + location + newLine +
-//                 "Position Type: " + positionType + newLine +
-//                 "Core Competency: " + coreCompetency + newLine;
-
-
+    }
