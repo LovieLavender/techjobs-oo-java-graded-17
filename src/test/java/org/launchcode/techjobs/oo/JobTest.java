@@ -37,7 +37,8 @@ public class JobTest {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String myTestJob = testJob.toString();
 
-        assertTrue(myTestJob.contains(System.getProperty("line.separator")));
+        assertTrue(myTestJob.startsWith(lineSeparator()));
+        assertTrue(myTestJob.endsWith(lineSeparator()));
     }
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
@@ -53,19 +54,24 @@ public class JobTest {
     }
     @Test
     public void testToStringHandlesEmptyField(){
-        Job testForEmptyFields = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job testForEmptyFields = new Job("", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String results = testForEmptyFields.toString();
 //        String newLine = System.lineSeparator();
 
-//        String letsSee = newLine +
+//        String actual = newLine +
 //                "ID: " + testForEmptyFields.getId() + newLine +
 //                "Name: " + testForEmptyFields.getName() + newLine +
 //                "Employer: " + testForEmptyFields.getEmployer().getValue() + newLine +
 //                "Location: " + testForEmptyFields.getLocation().getValue()+ newLine +
 //                "Position Type: " + testForEmptyFields.getPositionType().getValue() + newLine +
 //                "Core Competency: " + testForEmptyFields.getCoreCompetency().getValue() + newLine;
+        assertSame("", testForEmptyFields.getName());
+        assertSame("", testForEmptyFields.getEmployer().getValue());
+        assertSame("Desert", testForEmptyFields.getLocation().getValue());
+        assertSame("Quality control", testForEmptyFields.getPositionType().getValue());
+        assertSame("Persistence", testForEmptyFields.getCoreCompetency().getValue());
 
-        assertNotNull(results);
+//        assertNotNull(results);
 
 
     }
